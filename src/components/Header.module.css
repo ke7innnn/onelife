@@ -107,8 +107,8 @@
     position: absolute;
     left: 50%;
     top: 50%;
-    /* Added 2px to Y to nudge it down slightly as per user feedback */
-    transform: translate(-50%, calc(-50% + 2px));
+    /* Shifted UP by 6px to achieve perfect vertical balance in the blue bar */
+    transform: translate(-50%, calc(-50% - 6px));
     display: flex;
     justify-content: center;
     align-items: center;
