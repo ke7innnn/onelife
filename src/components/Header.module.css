@@ -112,19 +112,10 @@
     justify-content: center;
     align-items: center;
     z-index: 10;
-    height: 80px;
-    /* Match mainNav height */
-    width: 300px;
-    overflow: hidden;
-    /* This will help with cropping */
 }
 
 .logoImage {
     object-fit: contain;
-    object-position: 50% 100%;
-    /* Align to bottom to 'crop' the top empty space */
-    transform: scale(2.2);
-    /* Make it much bigger to fill the crops */
     filter: brightness(0) invert(1);
 }
 
