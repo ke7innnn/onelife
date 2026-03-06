@@ -35,8 +35,8 @@ export default function Header() {
                         <Image
                             src="/images/logo.png"
                             alt="One Life"
-                            width={220}
-                            height={80}
+                            width={280}
+                            height={100}
                             className={styles.logoImage}
                             priority
                         />

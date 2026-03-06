@@ -64,6 +64,8 @@
     background-color: var(--brand-blue);
     /* #134ec7 */
     color: #ffffff;
+    position: relative;
+    /* Added to anchor absolute children */
 }
 
 .navLeft {
@@ -102,15 +104,14 @@
 }
 
 .logoContainer {
-    flex: 1;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-top: -16px;
-    /* Shift up to compensate for transparent gap inside the image */
+    z-index: 10;
 }
 
 .logoImage {
