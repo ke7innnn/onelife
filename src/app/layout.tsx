@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   title: "ONELIFE!",
   description: "One Life Official Website",
   icons: {
-    icon: "/images/logo.png",
+    icon: "/tab logo/IMG_4726.PNG",
   },
 };
 
