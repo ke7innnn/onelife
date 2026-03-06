@@ -1,0 +1,227 @@
+.header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    /* Ensure 100vw marquee doesn't cause horizontal scroll */
+}
+
+.utilityBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    height: 40px;
+    background-color: var(--background);
+    border-bottom: 1px solid var(--border-color);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.utilityLeft,
+.utilityRight {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.tabBtn {
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 12px 0;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+}
+
+.tabActive {
+    color: var(--foreground);
+    border-bottom: 2px solid var(--foreground);
+}
+
+.utilityLink {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-transform: uppercase;
+}
+
+.utilityLink:hover {
+    text-decoration: underline;
+}
+
+.mainNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    height: 80px;
+    background-color: var(--brand-blue);
+    /* #134ec7 */
+    color: #ffffff;
+}
+
+.navLeft {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.navLinks {
+    display: flex;
+    gap: 32px;
+}
+
+.navLinks li a {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.navLinks li a:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -4px;
+    left: 0;
+    background-color: #ffffff;
+    transition: width 0.3s;
+}
+
+.navLinks li a:hover:after {
+    width: 100%;
+}
+
+.logoContainer {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: -16px;
+    /* Shift up to compensate for transparent gap inside the image */
+}
+
+.logoImage {
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+}
+
+.navRight {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 24px;
+}
+
+.iconBtn {
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s;
+}
+
+.iconBtn:hover {
+    opacity: 0.7;
+}
+
+.promoBanner {
+    background-color: #0f3d9c;
+    /* slightly darker blue for contrast */
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    font-size: 13px;
+    gap: 8px;
+}
+
+.promoBanner p {
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+.promoLinks {
+    display: flex;
+    gap: 16px;
+}
+
+.promoLinks a {
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.promoLinks a:hover {
+    opacity: 0.8;
+}
+
+/* Marquee Banner Section */
+.marqueeBanner {
+    background-color: #e5e89d;
+    /* Match the reference image's soft yellow */
+    color: #4a5d23;
+    /* Darker olive green for text contrast */
+    padding: 12px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100vw;
+    font-size: 13px;
+    font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    /* Match elegant aesthetic */
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.marqueeContent {
+    display: inline-flex;
+    white-space: nowrap;
+    /* Duration depends on length, adjust 20s if too fast/slow */
+    animation: marqueeScroll 25s linear infinite;
+}
+
+.marqueeContent span {
+    padding: 0 40px;
+    /* Space between each repeated phrase */
+}
+
+/* Keyframe for endless left scrolling */
+@keyframes marqueeScroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+        /* Scroll exactly half the width (which is one full duplicated set) */
+    }
+}
+
+@media (max-width: 1024px) {
+    .utilityBar {
+        padding: 0 20px;
+    }
+
+    .mainNav {
+        padding: 0 20px;
+    }
+
+    .navLinks {
+        display: none;
+        /* Mobile menu needed later */
+    }
+}
