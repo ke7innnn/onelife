@@ -107,7 +107,8 @@
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
+    /* Added 2px to Y to nudge it down slightly as per user feedback */
+    transform: translate(-50%, calc(-50% + 2px));
     display: flex;
     justify-content: center;
     align-items: center;
